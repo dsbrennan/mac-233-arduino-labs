@@ -1,0 +1,5 @@
+#define TIME_UNIT 1000
+#define DOT_UNITS 1
+#define DASH_UNITS 3
+char output[7] = { '-', '.', '.', '.', '-', '-', '.' }; 
+int current_char = 0;

@@ -1,0 +1,10 @@
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_BUILTIN, OUTPUT);
+  delay(3000);
+  Serial.println("System Ready");
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+}

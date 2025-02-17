@@ -1,0 +1,6 @@
+int led_on_time = 0;
+if(output[current_char] == '.'){
+  led_on_time = DOT_UNITS * TIME_UNIT;
+} else if (output[current_char] == '-'){
+  led_on_time = DASH_UNITS * TIME_UNIT;
+}

@@ -32,7 +32,7 @@
   The morse code message to display,
   in this example the word DAN: D (-..) A (.-) N (-.)
 */
-char output[7] = { '-', '.', '.', '.', '-', '-', '.' }; 
+char output[7] = { '-', '.', '.', '.', '-', '-', '.' };
 int current_char = 0;
 
 void setup() {
@@ -61,10 +61,10 @@ void loop() {
 
   // calculate amount of time LED is to be on for
   int led_on_time = 0;
-  if(output[current_char] == '.'){
+  if (output[current_char] == '.') {
     Serial.println("Dot");
     led_on_time = DOT_UNITS * TIME_UNIT;
-  } else if (output[current_char] == '-'){
+  } else if (output[current_char] == '-') {
     Serial.println("Dash");
     led_on_time = DASH_UNITS * TIME_UNIT;
   }
@@ -75,7 +75,7 @@ void loop() {
   digitalWrite(LED_PIN, LOW);
 
   // determine the next sequence to display
-  if (current_char > 7){
+  if (current_char >= 6) {
     current_char = 0;
   } else {
     current_char++;

@@ -1,0 +1,6 @@
+// this line is in the setup function
+pinMode(LED_PIN, OUTPUT);
+// these two lines are in the main function
+// note: there is a line of code between these two lines
+digitalWrite(LED_PIN, HIGH);
+digitalWrite(LED_PIN, LOW);

@@ -1,0 +1,2 @@
+servo.write(output[output_position]);
+Serial.println(output[output_position]);

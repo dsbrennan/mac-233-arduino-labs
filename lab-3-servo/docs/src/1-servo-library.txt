@@ -1,0 +1,3 @@
+#include <Servo.h>
+#define SERVO_PIN 9
+Servo servo;

@@ -38,6 +38,9 @@ On an Arduino there is an inbuilt Servo library that encapsulates the PWM comple
 \noindent
 A servo has three wires coming out of it: a \textit{power} cable, a \textit{ground} cable, and a \textit{signal} cable. The power cable is usually red, the ground cable is usually black or brown, and the signal cable is usually white or orange.
 
+\section{Creating the circuit}
+The circuit needed for this worksheet is: Arduino Pin 9\textrightarrow Servo sensor cable, Arduino GND\textrightarrow Servo ground cable, and Arduino +5V\textrightarrow Servo power cable.\\
+
 \section{Setup the servo library}
 The first thing we need to do is create a blank sketch, this is done by opening Arduino IDE, going to `File'\textrightarrow `Examples'\textrightarrow `01.Basics'\textrightarrow `BareMinimum'. Once this has opened, we can now setup the Servo library.\\
 
@@ -80,7 +83,7 @@ In the global scope, we have setup the servo library, but we now need to configu
 Now that we have the setup function sorted, we can concentrate on the loop function. Within the loop function, there are three major steps: 1 - write the correct value to the servo, 2 - determine the next position in the `output' array, 3 - wait two seconds before the next iteration. The code in the following sections, needs to go into the `loop' function.\\
 
 \subsection{Output to servo}
-At the top of the `loop' function, needs to be the logic to write the correct value within the output to the servo. Thankfully, this one line of code. We need to access the current position within the output array and then tell the servo to use that value. We also add in an additional line here, to output to the serial connection the selected value so that we can monitor the progress of the sketch.\\ 
+At the top of the `loop' function, needs to be the logic to write the correct value within the output to the servo. Thankfully, this is one line of code. We need to access the current position within the output array and then tell the servo to use that value. We also add in an additional line here, to output to the serial connection the selected value so that we can monitor the progress of the sketch.\\ 
 
 \vspace{-1.75em}
 \inputminted{arduino}{./src/6-loop-write.txt}
@@ -112,7 +115,7 @@ If you are having issue compiling the project or don't understand where each sec
 \vspace{2em}
 
 \begin{center}
-    \qrcode[hyperlink, height=6cm]{https://github.com/dsbrennan/mec217-arduino-labs/blob/main/lab-3-servo/lab-3-servo.ino}
+    \qrcode[hyperlink, height=4cm]{https://github.com/dsbrennan/mec217-arduino-labs/blob/main/lab-3-servo/lab-3-servo.ino}
 \end{center}
 
 

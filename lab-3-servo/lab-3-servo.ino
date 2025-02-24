@@ -24,7 +24,7 @@ Servo servo;
 /*
   The list of degrees to cycle through for the servo
 */
-int output[] = { 0, 30, 60, 90, 120, 150, 180 };
+int output[7] = { 0, 30, 60, 90, 120, 150, 180 };
 int output_position = 0;
 
 void setup() {

@@ -1,0 +1,2 @@
+current_loop_time = 0;
+crank_interrupt_current_time = 0;

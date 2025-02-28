@@ -1,0 +1,7 @@
+current_loop_time = millis();
+if (current_loop_time - crank_interrupt_current_time < CRANK_PASS_ACTIVITY_DELAY) {
+  digitalWrite(CRANK_ACTIVITY_LED_PIN, HIGH);
+  Serial.println("Crank Active");
+} else {
+  digitalWrite(CRANK_ACTIVITY_LED_PIN, LOW);
+}

@@ -1,0 +1,6 @@
+// setup LED pin as output with LED off
+pinMode(CRANK_ACTIVITY_LED_PIN, OUTPUT);
+digitalWrite(CRANK_ACTIVITY_LED_PIN, LOW);
+// setup crank pin as input and attach an interrupt
+pinMode(CRANK_PIN, INPUT);
+attachInterrupt(digitalPinToInterrupt(CRANK_PIN), crankInterrupt, FALLING);

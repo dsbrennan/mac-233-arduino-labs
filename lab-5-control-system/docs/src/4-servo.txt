@@ -1,0 +1,4 @@
+message_previous_time = 0;
+pinMode(ESC_PIN, OUTPUT);
+esc.attach(ESC_PIN);
+esc.write(0);

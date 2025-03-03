@@ -1,0 +1,5 @@
+if (current_loop_time - message_previous_time >= MESSAGE_MAXIMUM_INTERVAL){
+  message_previous_time = current_loop_time;
+  Serial.print("ESC power output: ");
+  Serial.println(esc_power_output);
+}

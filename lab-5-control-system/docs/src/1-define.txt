@@ -1,0 +1,4 @@
+#include <Servo.h>
+#define ESC_PIN 9
+#define CRANK_PASS_MAXIMUM_DELAY 1500
+#define MESSAGE_MAXIMUM_INTERVAL 1000

@@ -1,0 +1,14 @@
+if (current_loop_time - crank_interrupt_current_time < CRANK_PASS_MAXIMUM_DELAY) {
+  if (esc_power_output + esc_step_up <= 180) {
+    esc_power_output += esc_step_up;
+  } else {
+    esc_power_output = 180;
+  }
+} else {
+  if (esc_power_output - esc_step_down >= 0) {
+    esc_power_output -= esc_step_down;
+  } else {
+    esc_power_output = 0;
+  }
+}
+esc.write((int)esc_power_output);

@@ -1,0 +1,2 @@
+const float esc_step_up = 0.5;
+const float esc_step_down = 3.0;

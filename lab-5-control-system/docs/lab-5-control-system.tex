@@ -61,13 +61,13 @@ The next section of logic to include is two constant values that dictate the rat
 \vspace{.75em}
 
 \noindent
-The last section of logic within the global scope is to create a store a variable of when we last displayed the diagnostic message, the current power output to the ESC and a reference to the servo library to control the ESC.\\
+The last section of logic within the global scope is to create a variable to store when we last displayed the diagnostic message, the current power output to the ESC, and a reference to the servo library to control the ESC.\\
 \vspace{-1.75em}
 \inputminted{arduino}{./src/3-system-variables.txt}
 \vspace{0em}
 
 \subsection{Pins}
-The code within the `setup' function is the standard code we have seen before, firstly you initialise any variables that don't have an initial value `$message\_previous\_time$' in our case, then we need to setup the ESC pin and library as we did in Lab 3.\\
+The code within the `setup' function is the standard code we have seen before: firstly we initialise any variables that don't have an initial value --- `$message\_previous\_time$' in our case, then we need to set up the ESC pin and library as we did in Lab 3.\\
 \vspace{-1.75em}
 \inputminted{arduino}{./src/4-servo.txt}
 \vspace{0em}
@@ -76,7 +76,7 @@ The code within the `setup' function is the standard code we have seen before, f
 The code within the `loop' function is new code that you haven't seen before, but it builds upon everything covered in previous labs. The first piece of code to add to your sketch is the code that determines if you should be powering up or powering down the ESC. We do this through a nested `IF ELSE' statement. \\
 
 \noindent
-The outer `IF' statement checks if the current time of the `loop' minus the last time the hall effect interrupt was recorded is less than 1500 milliseconds. If this is true, we increment the ESC output value by the `step up' value as long as the power output value wouldn't exceed the maximum of 180 --- if it does, we set it to the maximum value. If the outer `IF' statement was false --- the last interrupt wasn't recorded within the last 1500 milliseconds of the current `loop' time, we start to power down the ESC. We decrement the ESC power output value by the `step down' value as long as the output value wouldn't go below the minimum 0 value --- if it does, we set it to the minimum value.\\
+The outer `IF' statement checks if the current time of the `loop' minus the last time the hall effect interrupt was recorded, is less than 1500 milliseconds. If this is true, we increment the ESC output value by the `step up' value, as long as the power output value wouldn't exceed the maximum of 180 --- if it does, we set it to the maximum value. If the outer `IF' statement was false --- the last interrupt wasn't recorded within the last 1500 milliseconds of the current `loop' time, we start to power down the ESC. We decrement the ESC power output value by the `step down' value, as long as the output value wouldn't go below the minimum 0 value --- if it does, we set it to the minimum value.\\
 
 \noindent
 The last line of code is to finally write the calculated output value to the ESC.\\
@@ -85,16 +85,16 @@ The last line of code is to finally write the calculated output value to the ESC
 \vspace{.75em}
 
 \noindent
-The last section of code is to help us understand what is going on with the system; however, before we can add this into our sketch we need to remove 1 line of code: `$Serial.println("Crank Active");$'. Once the above code has been removed, we can all the code in below which will print a diagnostic message every second to tell us what the current output power of the ESC is.\\
+The last section of code is to help us understand what is going on with the system; however, before we can add this into our sketch we need to remove 1 line of code: `$Serial.println("Crank Active");$'. Once the above code has been removed, we can add the code in below which will print a diagnostic message every second to tell us what the current output power of the ESC is.\\
 \vspace{-1.75em}
 \inputminted{arduino}{./src/6-message.txt}
 \vspace{-1em}
 
 \section*{Try it out on your Arduino}
-You now should be able to compile your sketch (`Sketch'\textrightarrow `Verify/Compile') and then upload to your Arduino (`Sketch'\textrightarrow `Upload'). You should now be able to pass the magnet across a side of the hall effect sensor, and every time you do, it should light up the LED and your servo should start to power up. When you stop passing the magnet past your hall effect sensor, the servo will start to power down.\\
+You now should be able to compile your sketch (`Sketch'\textrightarrow `Verify/Compile') and then upload to your Arduino (`Sketch'\textrightarrow `Upload'). You should now be able to pass the magnet across a side of the hall effect sensor, and every time you do, it should light up the LED, and your servo should start to power up. When you stop passing the magnet past your hall effect sensor, the servo will start to power down.\\
 
 \noindent
-Once you have a working sketch, try to expand your sketch to calculate the speed (Kmph) that the magnet is passing your hall effect sensor and display the speed in your debug message. \textit{Hint: You will need to record the last two interrupt times.}
+Once you have a working sketch, try to expand your sketch to calculate the speed (Kmph) that the magnet is passing your hall effect sensor, and display the speed in your debug message. \textit{Hint: You will need to record the last two interrupt times.}
 
 \section*{Help}
 If you are having issue compiling the project or don't understand where each section goes, you can see a complete version of the sketch with additional source code comments at \url{https://github.com/dsbrennan/mec217-arduino-labs/blob/main/lab-5-control-system/lab-5-control-system.ino}.

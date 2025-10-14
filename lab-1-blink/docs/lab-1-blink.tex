@@ -31,7 +31,7 @@ This worksheet will walk you through the steps of being able to display your nam
 The basic premise of the sketch is that we have an array (a vector) of signal instructions --- a set of `dots' and `dashes'. The sketch keeps track of where within these set of signal instructions we currently are, so that every time the `loop' function is executed, the LED can turn on for the correct amount of time for the current position within the sequence.
 
 \section{Turning on the LED}
-First start by opening a blank sketch: `File' \textrightarrow `Examples' \textrightarrow `01.Basics' \textrightarrow `BareMinimum'. Your IDE should now contain minimum sketch discussed in the previous lecture.\\
+First start by opening the Arduino IDE and creating a blank sketch: `File' \textrightarrow `Examples' \textrightarrow `01.Basics' \textrightarrow `BareMinimum'. Your IDE should now contain a minimum sketch discussed in the first lecture. If you do not have the Arduino IDE installed on your computer, please refer back to slides from the first lecture.\\
 
 \noindent
 Our first step is to set up the serial connection: this allows us to monitor what the Arduino is doing. Then we can set the internal LED pin to an output mode. The above is done within the `setup' function. Within the main `loop' we set the pin with the LED on to `HIGH'.
@@ -42,7 +42,7 @@ Our first step is to set up the serial connection: this allows us to monitor wha
 You can now compile your sketch (`Sketch' \textrightarrow `Verify\textbackslash Compile') and then upload to your Arduino (`Sketch' \textrightarrow `Upload') -- Ensure you have selected your Arduino in your board manager.
 
 \noindent
-You should see your Arduino power on, wait 3 seconds, display `System Ready' and then turn on the LED.
+You should see your Arduino power on, wait 3 seconds, display `System Ready' in the `Serial Monitor' tab and then turn on the LED. If the `Serial Monitor' tab is not showing in the bottom section of the IDE, you will need to enable it: `Tools' \textrightarrow `Serial Monitor'.
 
 \section{Add Morse Code variables}
 To make our sketch understand Morse Code, we need to add five lines of code within the global scope. The first line declares that a unit of time is 1000 milliseconds. The second line says that a `dot' is 1 unit of time. The third line states that a `dash' is 3 units of time.\\ 
@@ -73,6 +73,9 @@ The next logic within the `loop' function needs to be turning on the LED, waitin
 
 \inputminted{arduino}{./src/4-flash-led.txt}
 
+\noindent
+The `digitalWrite' function is a key action you will often use during these labs. It allows us to write a `HIGH' or `LOW' value to something connected to the Arduino; in our case of an LED, this is an ON and OFF signal. The `delay' is another key function that enables you to pause the sketch on the Arduino for $n$ milliseconds. 
+
 \subsection{Calculate the next signal}
 \label{sec:next}
 Once you have displayed the current signal to the LED, the final piece of logic within the `loop' function is to calculate where within the sequence the next iteration of the `loop' should go.\\
@@ -86,7 +89,10 @@ The logic for this is that if your current signal being displayed is the last si
 Now that you have the above sections complete in your sketch, compile and upload the sketch to your team's Arduino.\\ 
 
 \noindent
-Once you have successfully run this sketch on your Arduino, change the sequence displayed to the name of one member from your team. You can find a Morse code chart on the Wikipedia page: \url{https://en.wikipedia.org/wiki/Morse_code}.
+Once you have successfully run this sketch on your Arduino, change the sequence displayed to the name of one member from your team. You can find a Morse code chart on the Wikipedia page: \url{https://en.wikipedia.org/wiki/Morse_code}.\\
+
+\noindent
+Note: the code included within this lab assumes that the Morse code message will only ever be a sequence of 7 signals. Can you change your code to work no matter how long the sequence of signals is?
 
 \section*{Help}
 If you are having issue compiling the project or don't understand where each section goes, you can see a complete version of the sketch with additional source code comments at \url{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-1-blink/lab-1-blink.ino}.

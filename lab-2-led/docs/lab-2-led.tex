@@ -23,7 +23,7 @@
 \pagestyle{fancy}
 
 \section*{Prerequisites}
-This worksheet builds upon the Lab 1 worksheet. You will have needed to complete the Lab 1 worksheet before you can continue with this lab. Out of your Arduino pack, you will need: 1 Arduino, 1 breadboard, 1 LED, 1 $220\Omega$ resister, and 1 jumper cable.
+This worksheet builds upon the Lab 1 worksheet. You will have needed to complete the Lab 1 worksheet before you can continue with this lab. Out of your Arduino pack, you will need: 1 Arduino, 1 breadboard, 1 LED, 1 $220\Omega$ resistor, and 1 jumper cable.
 
 \section*{Objectives}
 The objective of today's lab is to learn how to use an electronic breadboard to create a circuit and to control an external output on the Arduino.\\
@@ -64,11 +64,11 @@ For instance, if you plugged the Arduino output for Pin D2 into column H on row 
 There is also four power rails at either side of the breadboard --- two on the left, and two on the right. The rails on either side are traditionally used for positive and negative power. In our case this would be used for +5v and GND. All the rows within a rails column are considered connected together. Figure \ref{fig:breadboard-groups} depicts the two power rail groups on the left side of the breadboard, as well as depicting the two row groups for row 1.
 
 \section{Creating the circuit}
-The circuit needed for this worksheet is: Arduino Pin D2 \textrightarrow $220\Omega$ resister \textrightarrow LED
+The circuit needed for this worksheet is: Arduino Pin D2 \textrightarrow $220\Omega$ resistor \textrightarrow LED
 \textrightarrow Arduino GND.\\
 
 \noindent
-To do this, place your Arduino into the breadboard. Once this is done, use the pin out diagram linked in lecture 1 to find which pin on the Arduino is Pin D2. You then need to connect one leg of the $220\Omega$ resister to Pin D2 of your Arduino through your breadboard. Then connect the other leg of the $220\Omega$ resister  --- mind how the rows and columns are connected, ensure the resister isn't bypassed in the circuit --- to the positive leg of the LED (the longer leg). Finally, connect the negative leg of the LED to the ground PIN on your Arduino through the jumper cable. You won't see anything visual happen at this stage, you need to complete the code tweaks below before the LED will light up.
+To do this, place your Arduino into the breadboard. Once this is done, use the pin out diagram linked in lecture 1 to find which pin on the Arduino is Pin D2. You then need to connect one leg of the $220\Omega$ resistor to Pin D2 of your Arduino through your breadboard. Then connect the other leg of the $220\Omega$ resistor  --- mind how the rows and columns are connected, ensure the resistor isn't bypassed in the circuit --- to the positive leg of the LED (the longer leg). Finally, connect the negative leg of the LED to the ground PIN on your Arduino through the jumper cable. You won't see anything visual happen at this stage, you need to complete the code tweaks below before the LED will light up.
 
 \section{Changing the existing code}
 Firstly, open your sketch from the previous worksheet into Arduino IDE. Once this is open, save the sketch under a new name (`File'\textrightarrow `Save As'). This will make sure you still have a copy of the sketch from Lab 1.\\

@@ -23,7 +23,7 @@
 \pagestyle{fancy}
 
 \section*{Prerequisites}
-This lab doesn't require any code from previous labs; however, it does expect you to have completed these, as common code repeated from previous labs will not be explained in detail again here. Out of your Arduino pack, you will need: 1 Arduino, 1 A3144 hall effect sensor, 1 LED, 1 $10K\Omega$ resister, 1 $220\Omega$ resister, and 5 jumper cables.
+This lab doesn't require any code from previous labs; however, it does expect you to have completed these, as common code repeated from previous labs will not be explained in detail again here. Out of your Arduino pack, you will need: 1 Arduino, 1 A3144 hall effect sensor, 1 LED, 1 $10K\Omega$ resistor, 1 $220\Omega$ resistor, and 5 jumper cables.
 
 \section*{Objectives}
 The objective of today's lab is to learn how to use an interrupt to record a value of a sensor whose value is changed via an external event: \url{https://docs.arduino.cc/language-reference/en/functions/external-interrupts/attachInterrupt/}.\\
@@ -44,7 +44,7 @@ In short, a hall effect sensor allows you to detect the presence of a magnet ---
             label/.style={draw=none, text=black},
         ]
             %% components
-            \node[resistor] at (0, 2) (resister) {$10K\Omega$};
+            \node[resistor] at (0, 2) (resistor) {$10K\Omega$};
             \node[sensor] at (0, 0) (hall-effect){A3144};
             \node[label] at (-1.1, -4) (positive) {\small +5v};
             \node[label] at (0, -4) (ground) {\small GND};
@@ -54,8 +54,8 @@ In short, a hall effect sensor allows you to detect the presence of a magnet ---
             \draw[pin] (hall-effect.south) -- (ground);
             \draw[pin] ($(hall-effect.south east) - (0.15, 0)$) -- (output);
             %% connection
-            \draw[wire, draw=green] let \p1 = ($(positive.north) + (-0.155, 0.05)$), \p2 = ($(\p1) - (1.5, 0)$), \p3 = (resister.west) in (\p1) -- (\p2) -- (\x2, \y3) -- (\p3);
-            \draw[wire, draw=green] let \p1 = ($(output.north) + (0.155, 0.05)$), \p2 = ($(\p1) + (1.5, 0)$), \p3 = (resister.east) in (\p1) -- (\p2) -- (\x2, \y3) -- (\p3);
+            \draw[wire, draw=green] let \p1 = ($(positive.north) + (-0.155, 0.05)$), \p2 = ($(\p1) - (1.5, 0)$), \p3 = (resistor.west) in (\p1) -- (\p2) -- (\x2, \y3) -- (\p3);
+            \draw[wire, draw=green] let \p1 = ($(output.north) + (0.155, 0.05)$), \p2 = ($(\p1) + (1.5, 0)$), \p3 = (resistor.east) in (\p1) -- (\p2) -- (\x2, \y3) -- (\p3);
 
         \end{tikzpicture}
     \end{center}
@@ -82,9 +82,9 @@ Because being able to interrupt the `loop' function is a special case, there may
 \label{sec:circuit}
 There are two circuits needed for this worksheet, the first is for the hall effect sensor (HES), and the second is for the visual display LED.\\
 \noindent
-\textbf{HES circuit}: Arduino +5V\textrightarrow\hspace{0.1em}HES left leg, Arduino GND\textrightarrow\hspace{0.1em}HES middle leg, Arduino Pin 2\textrightarrow\hspace{0.1em}HES right leg. HES left\textrightarrow \hspace{0.1em}$10K\Omega$ resister\textrightarrow\hspace{0.1em}HES right legs.\\
+\textbf{HES circuit}: Arduino +5V\textrightarrow\hspace{0.1em}HES left leg, Arduino GND\textrightarrow\hspace{0.1em}HES middle leg, Arduino Pin 2\textrightarrow\hspace{0.1em}HES right leg. HES left\textrightarrow \hspace{0.1em}$10K\Omega$ resistor\textrightarrow\hspace{0.1em}HES right legs.\\
 \noindent
-\textbf{LED circuit}: Arduino Pin 4\textrightarrow $220\Omega$ resister\textrightarrow LED\textrightarrow Arduino GND.\\
+\textbf{LED circuit}: Arduino Pin 4\textrightarrow $220\Omega$ resistor\textrightarrow LED\textrightarrow Arduino GND.\\
 
 
 \section{System Functionality}

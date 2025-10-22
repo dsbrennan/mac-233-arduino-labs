@@ -23,7 +23,7 @@
 \pagestyle{fancy}
 
 \section*{Prerequisites}
-This worksheet builds upon the Lab 4 worksheet. You will have needed to complete the Lab 4 worksheet before you can continue with this lab. Out of your Arduino pack, you will need: 1 Arduino, 1 A3144 hall effect sensor, 1 Servo, 1 LED, 1 $10K\Omega$ resister, 1 $220\Omega$ resister, and 8 jumper cables.
+This worksheet builds upon the Lab 4 worksheet. You will have needed to complete the Lab 4 worksheet before you can continue with this lab. Out of your Arduino pack, you will need: 1 Arduino, 1 A3144 hall effect sensor, 1 Servo, 1 LED, 1 $10K\Omega$ resistor, 1 $220\Omega$ resistor, and 8 jumper cables.
 
 \section*{Objectives}
 The Objectives of today's lab is to build a full control system; namely, using a hall effect sensor to determine if an Electronic Speed Controller (ESC) --- and associated motor --- should be powered up or down. While the system we build today is designed for an ESC and motor, we will be using a servo as a proxy. As mentioned in the Lab 3 worksheet, both an ESC and a servo operate the same way within the context of an Arduino; however, an ESC requires additional configuration outside the scope of an Arduino.
@@ -32,9 +32,9 @@ The Objectives of today's lab is to build a full control system; namely, using a
 \label{sec:circuit}
 There are three circuits needed for this worksheet, the first is for the hall effect sensor (HES), the second is for the visual display LED, and the third is for the ESC.\\
 \noindent
-\textbf{HES circuit}: Arduino +5V\textrightarrow\hspace{0.1em}HES left leg, Arduino GND\textrightarrow\hspace{0.1em}HES middle leg, Arduino Pin 2\textrightarrow\hspace{0.1em}HES right leg. HES left\textrightarrow \hspace{0.1em}$10K\Omega$ resister\textrightarrow\hspace{0.1em}HES right legs.\\
+\textbf{HES circuit}: Arduino +5V\textrightarrow\hspace{0.1em}HES left leg, Arduino GND\textrightarrow\hspace{0.1em}HES middle leg, Arduino Pin 2\textrightarrow\hspace{0.1em}HES right leg. HES left\textrightarrow \hspace{0.1em}$10K\Omega$ resistor\textrightarrow\hspace{0.1em}HES right legs.\\
 \noindent
-\textbf{LED circuit}: Arduino Pin 4\textrightarrow $220\Omega$ resister\textrightarrow LED\textrightarrow Arduino GND.\\
+\textbf{LED circuit}: Arduino Pin 4\textrightarrow $220\Omega$ resistor\textrightarrow LED\textrightarrow Arduino GND.\\
 \noindent
 \textbf{ESC circuit}: Arduino +5V\textrightarrow Servo power cable, Arduino GND\textrightarrow Servo ground cable, Arduino Pin 9\textrightarrow Servo sensor cable.
 

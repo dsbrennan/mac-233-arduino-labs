@@ -24,31 +24,48 @@
 \begin{document}
 \pagestyle{fancy}
 
+You can view this guide online so that you can enlarge the wiring diagrams.
+\begin{center}
+    \qrcode[hyperlink, height=.25\textwidth]{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-guide/lab-guide.pdf}
+\end{center}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Lab 1: Morse Code %%
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Lab 1: Morse Code}
+\subsection*{Summary}
+The purpose of this lab is to introduce the Arduino ecosystem. By the end of the lab they will have learnt how to use Arduino IDE, communicate with the Arduino and built a simple sketch to flash the inbuilt LED to a Morse code message of their name.
 
+\vspace{1em}
 \begin{tabularx}{\textwidth}{l@{\hspace{1em}}|@{\hspace{1em}}l}
     Source Code & Documentation\\
-    \qrcode[hyperlink, height=.31\textwidth]{https://github.com/dsbrennan/ mac-233-arduino-labs/blob/main/lab-1-blink/lab-1-blink.ino}
+    \qrcode[hyperlink, height=.31\textwidth]{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-1-blink/lab-1-blink.ino}
     &
-    \qrcode[hyperlink, height=.31\textwidth]{https://github.com/dsbrennan/ mac-233-arduino-labs/blob/main/lab-1-blink/docs/lab-1-blink.pdf} \\
+    \qrcode[hyperlink, height=.31\textwidth]{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-1-blink/docs/lab-1-blink.pdf} \\
 \end{tabularx}
+\vspace{1em}
 
 \subsection*{FAQ's}
-Coming Soon
+
+\subsubsection*{Cannon locate `flash'}
+When uploading their sketch to the Arduino, the students will often get an error in red saying about being unable to locate flash. This is a perfectly normal warning and can be ignored by the students. This happens because the Nano Every's being used don't contain a boot section, so the `avrdude' (the uploader) cannot locate it because it doesn't exist.
+
+\subsubsection*{Unable to upload}
+Student may get an generic error when trying to upload their sketch. If this is not the above error, please check that in the board manager (top left), says Nano Every in bold. If this is not bold, then simply click on the drop down and select Nano Every again.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %% Lab 2: External LED %%
 %%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newpage
 \section*{Lab 2: External LED}
+\subsection*{Summary}
+The purpose of this lab is to teach the students how to interface with an external component; namely, an LED wired into the Arduino via a breadboard. The code used in this lab is the code from Lab 1 with changing the pin being used from the internal LED to an external pin.
 
+\vspace{1em}
 \begin{tabularx}{\textwidth}{l@{\hspace{1em}}|@{\hspace{1em}}l}
 
-    Wiring Diagram & Source Code \\
+    \hspace{0.8em}Wiring Diagram & Source Code \\
 
     \multirow{3}{*}[6.5em]{
         \begin{tikzpicture}[
@@ -86,10 +103,13 @@ Coming Soon
     & \qrcode[hyperlink, height=.31\textwidth]{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-2-led/docs/lab-2-led.pdf}\\
     
 \end{tabularx}
+\vspace{1em}
 
 \subsection*{FAQ's}
-Coming Soon
-
+\subsubsection*{Resistor issues}
+If the students are unable to find which resistor is the $220\Omega$ resistor, there is a help article on blackboard under section 4a called `Reading Resistor Values'.\\
+\noindent
+The other issue around resistors could be students wiring the resistor in as parallel instead of series.
 
 %%%%%%%%%%%%%%%%%%
 %% Lab 3: Servo %%
@@ -99,7 +119,7 @@ Coming Soon
 
 \begin{tabularx}{\textwidth}{l@{\hspace{1em}}|@{\hspace{1em}}l}
 
-    Wiring Diagram & Source Code \\
+    \hspace{0.8em}Wiring Diagram & Source Code \\
 
     \multirow{3}{*}[6.5em]{
         \begin{tikzpicture}[
@@ -153,7 +173,7 @@ Coming Soon
 
 \begin{tabularx}{\textwidth}{l@{\hspace{1em}}|@{\hspace{1em}}l}
 
-    Wiring Diagram & Source Code \\
+    \hspace{0.8em}Wiring Diagram & Source Code \\
 
     \multirow{3}{*}[6.5em]{
         \begin{tikzpicture}[

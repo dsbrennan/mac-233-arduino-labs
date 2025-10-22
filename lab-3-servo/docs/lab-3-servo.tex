@@ -30,7 +30,7 @@ The objective of today's lab is to learn how to control a servo using the inbuil
 This worksheet will take you through the steps of how to connect an external servo to your Arduino and create a sketch that rotates the servo in increments of 30 degrees. Once the sketch reaches 180 degree (the maximum number of degrees on a servo), the sketch will reset the degrees to zero and start incrementing in steps of 30 degrees again.
 
 \section*{Understanding how a servo works}
-Within the remit of this lab, a servo (or servomotor) is a physical device used to control rotary motion. On an Arduino, servos (and some other analogue devices) need to be controlled using Pulse Width Modulation (PWM). Whilst this lab will not go into detail about PWM (the interested reader can view \url{https://docs.arduino.cc/learn/microcontrollers/analog-output/}), it is important to understand that not every pin on an Arduino can be used for PWM output. On the Arduino Nano Every, the pins that can handle a PWM output are pins: 3, 5, 6, 9, 10 (these details can be viewed from the datasheet linked in lecture 1.)\\
+Within the remit of this lab, a servo (or servomotor) is a physical device used to control rotary motion. On an Arduino, servos (and some other analogue devices) need to be controlled using Pulse Width Modulation (PWM). You have covered the theory of PWM in last week's electronic lecture; therefore, this lab will not go into detail about PWM (for more details see: \url{https://docs.arduino.cc/learn/microcontrollers/analog-output/}). It is important to understand that depending on the Arduino you are using, not every pin can be used for PWM output. On the Arduino Nano Every, the pins that can handle a PWM output are pins: 3, 5, 6, 9, 10 (these details can be viewed from the datasheet linked in lecture 1.)\\
 
 \noindent
 On an Arduino there is an inbuilt Servo library that encapsulates the PWM complexities and helps us control a servo (or an Electronic Speed Controller connected to a DC motor). For this library, you simply write an output value to your servo between 0 and 180 --- which maps directly to the number of degrees of rotation available on most servos: 0\textrightarrow 180.\\
@@ -66,7 +66,7 @@ The first thing to do in any sketch, is to setup the debugging by connecting the
 \vspace{-.5em}
 
 \subsection{Setup output}
-In the global scope, we have already declared the desired output; however, it is always good practice to set any variables that could be changed at different points during the sketch. In our case, this is simply means setting the current position in the degree output.\\
+In the global scope, we have already declared the desired output; however, it is always good practice to set any variables that could be changed at different points during the sketch. In our case, this is simply setting the current position in the degree output.\\
 
 \vspace{-1.75em}
 \inputminted{arduino}{./src/4-setup-output.txt}

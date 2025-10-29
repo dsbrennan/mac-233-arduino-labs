@@ -4,6 +4,7 @@
 \usepackage{fancyhdr} %header and footer control
 \usepackage{minted} %source code syntax highlighting
 \usepackage{qrcode} %qrcode links
+\usepackage{graphicx} %images
 \usepackage{tikz} %diagrams
 \usetikzlibrary{calc}
 
@@ -96,6 +97,7 @@ You now should be able to compile your sketch (`Sketch'\textrightarrow `Verify/C
 \noindent
 Once you have a working sketch, try to expand your sketch to calculate the speed (Kmph) that the magnet is passing your hall effect sensor, and display the speed in your debug message. \textit{Hint: You will need to record the last two interrupt times.}
 
+\pagebreak
 \section*{Help}
 If you are having issue compiling the project or don't understand where each section goes, you can see a complete version of the sketch with additional source code comments at \url{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-5-control-system/lab-5-control-system.ino}.
 
@@ -103,5 +105,13 @@ If you are having issue compiling the project or don't understand where each sec
     \qrcode[hyperlink, height=3cm]{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-5-control-system/lab-5-control-system.ino}
 \end{center}
 
+\vspace{2em}
+
+\noindent
+Additionally, if you are wondering how to wire up the circuit required for this lab on the breadboard, the electronic wiring diagram is below.
+
+\begin{center}
+    \includegraphics[width=.6\textwidth]{./images/wiring-diagram.png}
+\end{center}
 
 \end{document}

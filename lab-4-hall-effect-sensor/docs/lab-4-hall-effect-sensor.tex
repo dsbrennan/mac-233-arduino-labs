@@ -4,6 +4,7 @@
 \usepackage{fancyhdr} %header and footer control
 \usepackage{minted} %source code syntax highlighting
 \usepackage{qrcode} %qrcode links
+\usepackage{graphicx} %images
 \usepackage{tikz} %diagrams
 \usetikzlibrary{calc}
 
@@ -157,6 +158,7 @@ The final logic within the `loop' function is to wait 50 milliseconds before the
 \section*{Try it out on your Arduino}
 You now should be able to compile your sketch (`Sketch'\textrightarrow `Verify/Compile') and then upload to your Arduino (`Sketch'\textrightarrow `Upload'). You should now be able to pass the magnet across a side of the hall effect sensor, and every time you do, it should light up the LED. \textit{Note:} the hall effect sensors are directional, so if the LED isn't lighting up, turn over the magnet and try again.
 
+\pagebreak
 \section*{Help}
 If you are having issue compiling the project or don't understand where each section goes, you can see a complete version of the sketch with additional source code comments at \url{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-4-hall-effect-sensor/lab-4-hall-effect-sensor.ino}.
 
@@ -164,5 +166,13 @@ If you are having issue compiling the project or don't understand where each sec
     \qrcode[hyperlink, height=4cm]{https://github.com/dsbrennan/mac-233-arduino-labs/blob/main/lab-4-hall-effect-sensor/lab-4-hall-effect-sensor.ino}
 \end{center}
 
+\vspace{2em}
+
+\noindent
+Additionally, if you are wondering how to wire up the circuit required for this lab on the breadboard, the electronic wiring diagram is below.
+
+\begin{center}
+    \includegraphics[width=.6\textwidth]{./images/wiring-diagram.png}
+\end{center}
 
 \end{document}

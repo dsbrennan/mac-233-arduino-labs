@@ -65,7 +65,7 @@ In short, a hall effect sensor allows you to detect the presence of a magnet ---
 \end{figure}
 
 \noindent
-The particular hall effect sensor you have has three legs: a \textit{power} leg, a \textit{ground} leg, and a \textit{digital output} leg. The sensor is shaped like a trapezium. With the short base of the trapezium facing towards you (as depicted in Figure \ref{fig:hall-effect-sensor}) and the legs facing south, the sensor is wired into the Arduino as follows: Arduino +5V\textrightarrow left leg, Arduino GND\textrightarrow middle leg, and Arduino Pin 2\textrightarrow right leg.\\
+The particular hall effect sensor you have has three legs: a \textit{power} leg, a \textit{ground} leg, and a \textit{digital output} leg. The sensor is shaped like a trapezium. With the short base of the trapezium facing towards you (as depicted in Figure \ref{fig:hall-effect-sensor}) and the legs facing south, the sensor is wired into the Arduino as follows: Arduino +5V\textrightarrow left leg, Arduino GND\textrightarrow middle leg, and Arduino Pin D2\textrightarrow right leg.\\
 
 \section*{Interrupts}
 The purpose of today's lab, is to gain experience of when and how to use an \textit{interrupt} in an Arduino. In previous labs, we have changed the value of an externally connected device using the command \textit{digitalWrite}. You can read the value of a sensor using the command \textit{digitalRead}; however, this method is not always appropriate when you consider when within the event timeline, the value of the sensor may change.\\
@@ -77,15 +77,15 @@ If we consider how an Arduino works in context of an event timeline. The Arduino
 This design pattern works well in a system that is designed to monitor the gradual change of a value over a period of time --- say capturing the temperature outside every five minutes over a twenty-four-hour period; however, this design pattern fails in a scenario where the sensor value could have changed between the two instances of the \textit{digitalRead} logic. In this scenario you need a way of interrupting the Arduino to pause whatever it is doing, run the required code needed to record a value change, and then continue with its previous operations; an \textit{interrupt}.\\
 
 \noindent
-Because being able to interrupt the `loop' function is a special case, there may be restrictions --- depending on your Arduino --- as to which pins this feature is enabled on. In the case of the Nano family of Arduino's, this is pins: 2 \& 3 (\url{https://www.arduino.cc/reference/cs/language/functions/external-interrupts/attachinterrupt/}).\\
+Because being able to interrupt the `loop' function is a special case, there may be restrictions --- depending on your Arduino --- as to which pins this feature is enabled on. In the case of the Nano family of Arduino's, this is digital pins: 2 \& 3 (\url{https://www.arduino.cc/reference/cs/language/functions/external-interrupts/attachinterrupt/}).\\
 
 \section{Creating the circuit}
 \label{sec:circuit}
 There are two circuits needed for this worksheet, the first is for the hall effect sensor (HES), and the second is for the visual display LED.\\
 \noindent
-\textbf{HES circuit}: Arduino +5V\textrightarrow\hspace{0.1em}HES left leg, Arduino GND\textrightarrow\hspace{0.1em}HES middle leg, Arduino Pin 2\textrightarrow\hspace{0.1em}HES right leg. HES left\textrightarrow \hspace{0.1em}$10K\Omega$ resistor\textrightarrow\hspace{0.1em}HES right legs.\\
+\textbf{HES circuit}: Arduino +5V\textrightarrow\hspace{0.1em}HES left leg, Arduino GND\textrightarrow\hspace{0.1em}HES middle leg, Arduino Pin D2\textrightarrow\hspace{0.1em}HES right leg. HES left\textrightarrow \hspace{0.1em}$10K\Omega$ resistor\textrightarrow\hspace{0.1em}HES right legs.\\
 \noindent
-\textbf{LED circuit}: Arduino Pin 4\textrightarrow $220\Omega$ resistor\textrightarrow LED\textrightarrow Arduino GND.\\
+\textbf{LED circuit}: Arduino Pin D4\textrightarrow $220\Omega$ resistor\textrightarrow LED\textrightarrow Arduino GND.\\
 
 
 \section{System Functionality}

@@ -33,11 +33,11 @@ The Objectives of today's lab is to build a full control system; namely, using a
 \label{sec:circuit}
 There are three circuits needed for this worksheet, the first is for the hall effect sensor (HES), the second is for the visual display LED, and the third is for the ESC.\\
 \noindent
-\textbf{HES circuit}: Arduino +5V\textrightarrow\hspace{0.1em}HES left leg, Arduino GND\textrightarrow\hspace{0.1em}HES middle leg, Arduino Pin 2\textrightarrow\hspace{0.1em}HES right leg. HES left\textrightarrow \hspace{0.1em}$10K\Omega$ resistor\textrightarrow\hspace{0.1em}HES right legs.\\
+\textbf{HES circuit}: Arduino +5V\textrightarrow\hspace{0.1em}HES left leg, Arduino GND\textrightarrow\hspace{0.1em}HES middle leg, Arduino Pin D2\textrightarrow\hspace{0.1em}HES right leg. HES left\textrightarrow \hspace{0.1em}$10K\Omega$ resistor\textrightarrow\hspace{0.1em}HES right legs.\\
 \noindent
-\textbf{LED circuit}: Arduino Pin 4\textrightarrow $220\Omega$ resistor\textrightarrow LED\textrightarrow Arduino GND.\\
+\textbf{LED circuit}: Arduino Pin D4\textrightarrow $220\Omega$ resistor\textrightarrow LED\textrightarrow Arduino GND.\\
 \noindent
-\textbf{ESC circuit}: Arduino +5V\textrightarrow Servo power cable, Arduino GND\textrightarrow Servo ground cable, Arduino Pin 9\textrightarrow Servo sensor cable.
+\textbf{ESC circuit}: Arduino +5V\textrightarrow Servo power cable, Arduino GND\textrightarrow Servo ground cable, Arduino Pin D9\textrightarrow Servo sensor cable.
 
 \section{System Functionality}
 \label{sec:functionality}
@@ -50,7 +50,7 @@ This worksheet simply expands that logic to include an ESC --- say connected to 
 Firstly, open your sketch from the Lab 4 worksheet into Arduino IDE. Once this is open, save the sketch under a new name (`File'\textrightarrow `Save As'). This will make sure you still have a copy of the sketch from Lab 4. The code changes required can be summed up into three sections: 1 - defining the ESC and required constants (global scope), 2 - setup the pins (`setup' scope), 3 - determine to power up or down the ESC (`loop' scope). While this is all the code required to meet the specification of the system, we will also be adding in some additional debug information, so you can see how the system is powering up the ESC.
 
 \subsection{Defining the ESC}
-The first thing we need is to include the ESC definitions and library to correctly control the ESC --- a servo is our case. We need to include the standard servo library, define a new `$ESC\_PIN$' on pin 9, define a 1.5-second maximum delay for the hall effect sensor, and define a new 1-second interval on how often to display a debug message.\\
+The first thing we need is to include the ESC definitions and library to correctly control the ESC --- a servo is our case. We need to include the standard servo library, define a new `$ESC\_PIN$' on pin D9, define a 1.5-second maximum delay for the hall effect sensor, and define a new 1-second interval on how often to display a debug message.\\
 \vspace{-1.75em}
 \inputminted{arduino}{./src/1-define.txt}
 \vspace{.75em}
